@@ -1,0 +1,74 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+*.whl
+
+# Virtual environments
+.venv/
+venv/
+env/
+.conda/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment / secrets
+.env
+.netrc
+*.pem
+*.key
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Data (large files — not committed)
+data/raw/
+data/interferograms/
+data/products/
+data/fixture/
+
+# Docker
+docker-compose.override.yml
+
+# Node / Frontend
+web/node_modules/
+web/dist/
+web/.cache/
+
+# MinIO data
+minio-data/
+
+# Postgres data
+pgdata/
+
+# Redis data
+redis-data/
+
+# Coverage
+.coverage
+htmlcov/
+coverage.xml
+
+# Pytest
+.pytest_cache/
+
+# Alembic
+api/migrations/versions/__pycache__/
+
+# Reports output
+reports/output/
+
+# Logs
+*.log

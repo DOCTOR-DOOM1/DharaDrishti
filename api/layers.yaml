@@ -1,0 +1,170 @@
+# ─────────────────────────────────────────────────────────────
+# DharaDrishti — Layer Definitions (SINGLE SOURCE OF TRUTH)
+#
+# Owner: Saksham
+# Consumed by: GET /cities/{slug}/layers
+# Rendered by: Sohan's frontend (never edited by frontend)
+#
+# All legend text, palettes, rescale ranges, groups, and the
+# risk disclaimer are defined here. The frontend renders them
+# exactly as returned, without rewording.
+# ─────────────────────────────────────────────────────────────
+
+layers:
+  # ── Measured ──────────────────────────────────────────────
+
+  - id: velocity
+    label: "Velocity (mm/yr)"
+    group: measured
+    file: velocity.tif
+    legend:
+      unit: "mm/yr"
+      min: -30
+      max: 10
+      palette:
+        - "#d73027"  # strong subsidence (negative = away from satellite)
+        - "#f46d43"
+        - "#fdae61"
+        - "#fee08b"
+        - "#ffffbf"  # ~0 (noise floor)
+        - "#d9ef8b"
+        - "#a6d96a"
+        - "#66bd63"
+        - "#1a9850"  # strong uplift (positive = toward satellite)
+      note: >-
+        Line-of-sight velocity relative to reference point;
+        positive = toward satellite. Negative values indicate
+        ground motion away from satellite (typically subsidence).
+    provenance: "MintPy SBAS inversion of Sentinel-1 burst interferograms"
+    default_on: true
+
+  - id: velocity_sigma
+    label: "Velocity Uncertainty (mm/yr)"
+    group: measured
+    file: velocity_sigma.tif
+    legend:
+      unit: "mm/yr"
+      min: 0
+      max: 5
+      palette:
+        - "#ffffcc"
+        - "#c7e9b4"
+        - "#7fcdbb"
+        - "#41b6c4"
+        - "#1d91c0"
+        - "#225ea8"
+        - "#0c2c84"
+      note: "Standard error of the velocity estimate."
+    default_on: false
+
+  - id: coherence
+    label: "Temporal Coherence"
+    group: measured
+    file: coherence.tif
+    legend:
+      unit: ""
+      min: 0
+      max: 1
+      palette:
+        - "#f7fcf5"
+        - "#e5f5e0"
+        - "#c7e9c0"
+        - "#a1d99b"
+        - "#74c476"
+        - "#41ab5d"
+        - "#238b45"
+        - "#005a32"
+      note: "Temporal coherence (0–1). Pixels below 0.3 are masked."
+    default_on: false
+
+  - id: seasonal_amplitude
+    label: "Seasonal Amplitude (mm)"
+    group: measured
+    file: seasonal_amp.tif
+    legend:
+      unit: "mm"
+      min: 0
+      max: 15
+      palette:
+        - "#fff7ec"
+        - "#fee8c8"
+        - "#fdd49e"
+        - "#fdbb84"
+        - "#fc8d59"
+        - "#ef6548"
+        - "#d7301f"
+        - "#990000"
+      note: "Peak-to-trough seasonal displacement amplitude."
+    default_on: false
+
+  # ── Derived ──────────────────────────────────────────────
+
+  - id: gradient
+    label: "Velocity Gradient (mm/yr per km)"
+    group: derived
+    file: gradient.tif
+    legend:
+      unit: "mm/yr per km"
+      min: 0
+      max: 10
+      palette:
+        - "#fff5f0"
+        - "#fee0d2"
+        - "#fcbba1"
+        - "#fc9272"
+        - "#fb6a4a"
+        - "#ef3b2c"
+        - "#cb181d"
+        - "#99000d"
+      note: "Spatial gradient of the velocity field. High values indicate differential motion."
+    default_on: false
+
+  - id: detection_confidence
+    label: "Detection Confidence"
+    group: derived
+    file: detection_conf.tif
+    legend:
+      unit: ""
+      min: 0
+      max: 10
+      palette:
+        - "#f7fbff"
+        - "#deebf7"
+        - "#c6dbef"
+        - "#9ecae1"
+        - "#6baed6"
+        - "#4292c6"
+        - "#2171b5"
+        - "#084594"
+      note: >-
+        |velocity| / sigma. Values above the significance multiple
+        (default 3) indicate statistically significant motion.
+    default_on: false
+
+  # ── Risk (heuristic) ─────────────────────────────────────
+
+  - id: risk_index
+    label: "Risk Screening Index"
+    group: risk
+    file: risk_zones.geojson
+    legend:
+      unit: ""
+      min: 0
+      max: 1
+      palette:
+        - "#fef0d9"
+        - "#fdd49e"
+        - "#fdbb84"
+        - "#fc8d59"
+        - "#e34a33"
+        - "#b30000"
+      note: >-
+        Screening index, not a prediction of damage.
+        Combines velocity, gradient, and building density
+        with stated weights (see methodology). Off by default.
+    provenance: "Heuristic index — see docs/methodology.md for weights and inputs."
+    default_on: false
+
+# ── Global notes ──
+masked_pixel_note: "No reliable measurement here"
+synthetic_banner: "SYNTHETIC TEST DATA, not a measurement"
