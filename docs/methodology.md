@@ -34,3 +34,4 @@ True ground motion cannot be reliably distinguished from atmospheric and unwrapp
 Infrastructure damage is primarily driven by differential settlement rather than uniform subsidence. The spatial velocity gradient $|\nabla v|$:
 $$|\nabla v| = \sqrt{\left(\frac{\partial v}{\partial x}\right)^2 + \left(\frac{\partial v}{\partial y}\right)^2}$$
 provides early screening for angular distortion across civil foundation boundaries.
+

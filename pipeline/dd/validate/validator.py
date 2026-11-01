@@ -77,3 +77,4 @@ def validate_against_references(data_dir: Path, slug: str = "delhi-ncr") -> dict
         "city": slug,
         "comparisons": results
     }
+

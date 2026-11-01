@@ -38,3 +38,4 @@
 - **Visual:** Prominent disclaimer appears: *"Screening index, not a prediction of damage"*.
 - **Narrative:**
   > "Finally, our risk layer is off by default. It combines velocity gradients with exposure as a screening indicator for municipal engineers, never as an unvalidated structural damage prediction."
+

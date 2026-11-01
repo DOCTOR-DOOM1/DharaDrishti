@@ -42,3 +42,4 @@ def validate_run(slug: str, source: str, version: int):
         click.echo(f"  Ours:      {item['our_rate']} ± {item['our_sigma']} mm/yr")
         click.echo(f"  Delta:     {item['difference']} mm/yr")
         click.echo(f"  Note:      {item['notes']}")
+

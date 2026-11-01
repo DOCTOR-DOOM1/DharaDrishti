@@ -24,3 +24,4 @@
 ### 5. Multi-Sensor Data Integrity (NISAR vs. Sentinel-1)
 * **Principle:** L-band (NISAR, $\lambda \approx 24\text{ cm}$) and C-band (Sentinel-1, $\lambda \approx 5.5\text{ cm}$) have different penetration depths and scatterer sensitivity.
 * **Policy:** NISAR products in BETA or PROVISIONAL maturity states are strictly segregated and clearly labelled as experimental. They are never blended into Sentinel-1 multi-year velocity fields.
+

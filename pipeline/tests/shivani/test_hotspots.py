@@ -53,3 +53,4 @@ class TestHotspots:
             # Outer ring closed
             ring = coords[0][0]
             assert ring[0] == ring[-1], "Polygon outer ring must be closed"
+

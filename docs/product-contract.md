@@ -148,3 +148,4 @@ A view fetches its own data with `fetch(apiUrl + ...)`, imports nothing from Soh
 | H6 | Shivani → Saksham | Derived files + `summary.json` + `references.json` | after `dd derive` on real data |
 | H7 | Yash → Saksham | `meta.json`, `interferograms.json`, `browse/`, `cost.json`, real rasters | H8 |
 | H8 | Shivani → Saksham | `docs/limitations.md` for PDF reports | H8 |
+

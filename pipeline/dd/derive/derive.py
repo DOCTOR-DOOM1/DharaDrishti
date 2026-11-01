@@ -291,3 +291,4 @@ def compute_derived_layers(source_dir: Path, output_dir: Optional[Path] = None, 
         "hotspots_count": len(hotspot_features),
         "summary": summary
     }
+

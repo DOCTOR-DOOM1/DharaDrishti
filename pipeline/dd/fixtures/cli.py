@@ -35,3 +35,4 @@ def fixture_generate(slug: str, out_dir: str):
     click.echo(f"Derived layers complete! Hotspots detected: {derive_res['hotspots_count']}")
     click.echo(f"Summary: Fastest={derive_res['summary']['fastest_rate']['value']} mm/yr, Coverage={derive_res['summary']['coverage_pct']}%")
     click.echo("Fixture delivery H3 (Sync 1) READY.")
+

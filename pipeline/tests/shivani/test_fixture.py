@@ -74,3 +74,4 @@ class TestFixtureGenerator:
         assert disp.shape[1:] == GRID_SHAPE
         assert len(z_root.attrs["dates"]) == 40
         assert z_root.attrs["units"] == "mm"
+

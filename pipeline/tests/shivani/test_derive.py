@@ -80,3 +80,4 @@ class TestDeriveLayers:
             assert "risk_index" in props
             assert 0.0 <= props["risk_index"] <= 1.0
             assert "inputs" in props
+

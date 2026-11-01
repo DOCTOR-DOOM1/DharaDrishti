@@ -42,3 +42,4 @@ def derive_run(slug: str, source: str, version: int):
     click.echo(f"  Hotspots:       {res['hotspots_count']} clusters")
     click.echo(f"  Noise floor:    {res['summary']['noise_floor_mm_yr']} mm/yr")
     click.echo(f"  Hotspot area:   {res['summary']['hotspot_area_km2']} km²")
+

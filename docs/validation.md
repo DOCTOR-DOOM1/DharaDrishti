@@ -15,3 +15,4 @@
 1. **Never tune to match:** We do not manipulate reference points or filter thresholds to force agreement with existing literature.
 2. **Document basis:** Every rate comparison explicitly specifies whether the reported value was Line-of-Sight (LOS), vertical-equivalent, or not stated.
 3. **Temporal baseline awareness:** Differences between periods (e.g., 2014–2020 vs 2021–2023) reflect real hydrological variability and monsoon recharge variations.
+
