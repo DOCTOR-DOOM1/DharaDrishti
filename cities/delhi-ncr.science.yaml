@@ -1,0 +1,58 @@
+# cities/delhi-ncr.science.yaml
+# Owned by Shivani — Derived science parameters, thresholds, and validation targets
+
+city: delhi-ncr
+
+# Hotspot detection threshold: detection_conf = |velocity| / sigma >= significance_multiple
+significance_multiple: 3.0
+
+# Minimum cluster size for hotspot extraction (in pixels, ~150m grid)
+min_hotspot_pixels: 20
+
+# Stable control area for noise floor calculation (outside known subsidence bowls)
+noise_floor_control_area:
+  name: "North-Central Ridge stable control"
+  west: 77.16
+  south: 28.58
+  east: 77.22
+  north: 28.64
+
+# Risk heuristic configuration (Screening index, not a prediction of damage)
+risk_index:
+  weights_version: "v0"
+  weights:
+    velocity_weight: 0.50
+    gradient_weight: 0.35
+    building_density_weight: 0.15
+
+# Known validation monitoring sites (from published literature)
+validation_sites:
+  - name: "Kapashera"
+    lat: 28.518
+    lon: 77.085
+    radius_km: 1.5
+    published_rate: -110.0
+    published_basis: "LOS"
+    citation: "Garg et al. 2022"
+  - name: "IGI Airport"
+    lat: 28.556
+    lon: 77.100
+    radius_km: 2.0
+    published_rate: -15.0
+    published_basis: "LOS"
+    citation: "Sadhasivam et al. 2025"
+  - name: "Dwarka Sector 8"
+    lat: 28.575
+    lon: 77.068
+    radius_km: 1.5
+    published_rate: -35.0
+    published_basis: "LOS"
+    citation: "Garg et al. 2022"
+  - name: "Faridabad"
+    lat: 28.408
+    lon: 77.317
+    radius_km: 2.0
+    published_rate: -30.0
+    published_basis: "LOS"
+    citation: "Garg et al. 2022"
+
