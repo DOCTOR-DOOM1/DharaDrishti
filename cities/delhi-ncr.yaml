@@ -1,0 +1,61 @@
+# cities/delhi-ncr.yaml
+# Owned by Yash — the canonical pipeline config for Delhi NCR
+# (science parameters like significance_multiple live in delhi-ncr.science.yaml — Shivani)
+
+city: delhi-ncr
+name: "Delhi NCR"
+status: live
+
+# AOI (EPSG:4326) — Yash may refine polygon; this is the starting point from the contract
+aoi:
+  west: 76.95
+  south: 28.30
+  east: 77.40
+  north: 28.65
+
+# WKT polygon for ASF search (auto-generated from bbox above)
+aoi_wkt: "POLYGON((76.95 28.30, 77.40 28.30, 77.40 28.65, 76.95 28.65, 76.95 28.30))"
+
+# Sentinel-1 track selection (update after dd acquisitions report)
+track: "TBD"           # will be filled in after acquisitions report
+direction: ascending   # to be confirmed by acquisitions report
+
+# HyP3 burst InSAR settings
+hyp3:
+  looks: "20x4"          # 80 m resolution (range × azimuth)
+  max_temporal_days: 48  # sequential baseline limit
+  n_bursts: 8            # estimated bursts per scene (for credit estimates)
+  api_url: "https://hyp3-api.asf.alaska.edu"
+
+# Budget
+budget:
+  max_credits_per_month: 500
+
+# QC thresholds (set from what you see in the data)
+qc:
+  min_coherence: 0.3
+  min_component_fraction: 0.05
+  max_closure_phase_rad: 1.0
+
+# Reference point (auto by default; refine after inspecting velocity maps)
+# Mode: "auto" means MintPy selects a stable, coherent reference pixel
+reference_point:
+  lat: 28.42
+  lon: 77.10
+  mode: auto   # change to "manual" after inspecting maps
+
+# Troposphere correction
+troposphere:
+  method: pyaps   # ERA5 via PyAPS; fallback: "linear" if ERA5 download fails
+  # Record which method was actually used in meta.json
+
+# Data span (filled in after first ingest)
+data_span:
+  start: "TBD"
+  end: "TBD"
+
+# Cities listed in the contract (for reference)
+# delhi-ncr: primary city
+# ahmedabad: second city (T3)
+# bengaluru: low-signal control (T3)
+

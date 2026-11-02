@@ -1,0 +1,26 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Delhi NCR",
+        "slug": "delhi-ncr",
+        "description": "AOI for Delhi NCR land subsidence monitoring"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [76.95, 28.30],
+            [77.40, 28.30],
+            [77.40, 28.65],
+            [76.95, 28.65],
+            [76.95, 28.30]
+          ]
+        ]
+      }
+    }
+  ]
+}
+
